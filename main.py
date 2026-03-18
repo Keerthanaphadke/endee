@@ -27,10 +27,15 @@ valid_found = False
 for i in top_indices:
     if similarities[i] >= 0.1:
         print(f"{jobs[i]} (Score: {similarities[i]:.2f})")
+        common_words = set(query.lower().split()) & set(jobs[i].lower().split())
+        if common_words:
+            print(f"Reason: matched keywords -> {', '.join(common_words)}\n")
+        else:
+            print("Reason: semantic similarity based on context\n")
         valid_found = True
 
 if not valid_found:
-    print("No relevant jobs found. Try a different query.")
+    print("No strong match found. Try keywords like: AI, Python, React, Java")
 
 
 print("\nExplanation:")

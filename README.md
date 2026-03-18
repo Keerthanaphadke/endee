@@ -1,3 +1,42 @@
+# 🚀 Semantic Job Search using Endee Vector Database (Project)
+
+## 📌 Overview
+This project demonstrates a semantic job search system using vector representations of text. Instead of keyword matching, it retrieves jobs based on meaning and context.
+
+## 💡 Features
+- Semantic search using vector embeddings
+- Similarity-based job matching
+- Lightweight implementation using TF-IDF
+- Designed for integration with Endee vector database
+
+## 🛠️ Tech Stack
+- Python
+- Scikit-learn (TF-IDF)
+- Endee (Vector Database)
+
+## 🧠 How It Works
+1. Convert job descriptions into vectors
+2. Convert user query into vector
+3. Use cosine similarity to find matches
+4. Return top relevant jobs
+5. The system also provides explanation for matches, improving transparency and        interpretability.
+
+## 🔗 Endee Integration
+This project is designed to integrate with Endee:
+- Embeddings can be stored in Endee
+- Similarity search can be performed using Endee APIs
+
+Due to environment limitations (Docker not available), Endee server was not run locally.
+
+## ▶️ Run Project
+```bash
+python main.py
+
+📊 Example
+Input: AI engineer
+Output: Top matching job roles
+
+
 <p align="center">
   <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo-dark.svg">
