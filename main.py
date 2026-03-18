@@ -22,9 +22,16 @@ similarities = cosine_similarity(query_vector, job_vectors)[0]
 
 top_indices = similarities.argsort()[::-1][:3]
 
-print("\nTop Matches:\n")
+valid_found = False
+
 for i in top_indices:
-    print(f"{jobs[i]} (Score: {similarities[i]:.2f})")
+    if similarities[i] >= 0.1:
+        print(f"{jobs[i]} (Score: {similarities[i]:.2f})")
+        valid_found = True
+
+if not valid_found:
+    print("No relevant jobs found. Try a different query.")
+
 
 print("\nExplanation:")
 print("Results are based on semantic similarity using vector representations.")
